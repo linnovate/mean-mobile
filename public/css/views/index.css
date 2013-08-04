@@ -1,0 +1,12 @@
+.devil-image-container {
+	text-align: center;
+	padding: 40% 0;
+}
+
+
+img.devil {
+	height: 128px;
+	width: 128px;
+	vertical-align: middle;
+	text-align: center;
+}

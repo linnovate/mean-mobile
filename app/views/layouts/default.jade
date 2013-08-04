@@ -1,0 +1,10 @@
+!!! 5
+html(lang='en', xmlns='http://www.w3.org/1999/xhtml', xmlns:fb='https://www.facebook.com/2008/fbml', itemscope='itemscope', itemtype='http://schema.org/Product')
+  include ../includes/head
+  body(ontouchstart)
+    header(data-ng-include="'/views/system/header.html'", data-ng-controller="HeaderController")
+    section.content.animated(data-ng-controller="ContentController", ng-class="{open: global.menuState}")
+        block content
+    footer.animated(data-ng-include="'/views/system/footer.html'", data-ng-controller="FooterController", ng-class="{open: global.menuState}")
+    section.menu(data-ng-include="'/views/system/menu.html'")
+    include ../includes/foot
