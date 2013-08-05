@@ -29,7 +29,6 @@ var UserSchema = new Schema({
 /**
  * Virtuals
  */
-
 UserSchema
   .virtual('password')
   .set(function(password) {

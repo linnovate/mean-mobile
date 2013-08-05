@@ -4,42 +4,40 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     watch: {
-     
-        html: {
-          files: ['public/views/**'],
-          options: {
-            livereload: true,
-          },
-
+      html: {
+        files: ['public/views/**'],
+        options: {
+          livereload: true,
         },
-        js: {
-          files: ['public/js/**'],
-          options: {
-            livereload: true,
-          },
-
+      },
+      js: {
+        files: ['public/js/**'],
+        options: {
+          livereload: true,
         },
-        css: {
-          files: ['public/sass/*.scss'],
-          tasks: ['compass'],
-          options: {
-            livereload: true,
-          },
-        }      
+
+      },
+      css: {
+        files: ['public/sass/*.scss'],
+        tasks: ['compass'],
+        options: {
+          livereload: true,
+        },
+      }
     },
 
     jshint: {
-      all: ['Gruntfile.js']
+      all: ['gruntfile.js']
     },
-    compass: {                  // Task
-      dist: {                   // Target
-        options: {              // Target options
+    compass: { // Task
+      dist: { // Target
+        options: { // Target options
           sassDir: 'public/sass',
           cssDir: 'public/css',
           environment: 'production'
         }
       },
-      dev: {                    // Another target
+      dev: { // Another target
         options: {
           sassDir: 'public/sass',
           cssDir: 'public/css'
@@ -50,8 +48,8 @@ module.exports = function(grunt) {
       dev: {
         options: {
           file: 'server.js',
-          args: ['production'],
-          ignoredFiles: ['README.md', 'node_modules/**'],
+          args: [],
+          ignoredFiles: ['README.md', 'node_modules/**', '.DS_Store'],
           watchedExtensions: ['js'],
           watchedFolders: ['app', 'config'],
           debug: true,
@@ -76,22 +74,15 @@ module.exports = function(grunt) {
         }
       }
     }
-    
   });
 
   // Load NPM tasks 
-
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-nodemon');
   grunt.loadNpmTasks('grunt-concurrent');
 
-
-
-
   // Default task(s).
-
-  grunt.registerTask('default', ['jshint','compass', 'concurrent:target']);
-
+  grunt.registerTask('default', ['jshint', 'compass', 'concurrent:target']);
 };
