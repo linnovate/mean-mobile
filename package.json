@@ -30,6 +30,12 @@
     , "forever": "latest"
     , "mean-logger": "latest"
     , "bower": "latest"
+    , "grunt" : "latest"
+    , "grunt-contrib-compass" : "latest"
+    , "grunt-contrib-watch" : "latest"
+    , "grunt-contrib-jshint" : "latest"
+    , "grunt-nodemon" : "latest"
+    , "grunt-concurrent" : "latest"
   }
   , "devDependencies": {
         "supertest": "latest"
